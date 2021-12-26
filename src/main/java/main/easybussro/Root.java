@@ -1,12 +1,17 @@
 package main.easybussro;
+import com.google.firebase.FirebaseApp;
 
+import com.google.firebase.FirebaseOptions;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import main.easybussro.constants.Sizes;
+import main.easybussro.utils.FirebaseUtils;
 
 import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
 
 public class Root extends Application {
     @Override
@@ -17,6 +22,13 @@ public class Root extends Application {
         stage.setScene(scene);
         stage.setResizable(false);
         stage.show();
+
+        InputStream serviceAccount = Root.class.getResourceAsStream("/main.easybussro/serviceAccountKey.json");
+        FirebaseOptions options = FirebaseUtils.getFirebaseOptions(serviceAccount);
+
+        if(options != null){
+            FirebaseApp.initializeApp(options);
+        }
     }
 
     public static void main(String[] args) {
