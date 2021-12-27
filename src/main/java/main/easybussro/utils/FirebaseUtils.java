@@ -4,6 +4,7 @@ package main.easybussro.utils;
 
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.firebase.FirebaseOptions;
+import com.google.firebase.auth.FirebaseAuth;
 import javafx.application.Application;
 
 import java.io.IOException;
@@ -22,4 +23,5 @@ public class FirebaseUtils {
         }
         return null;
     }
+
 }

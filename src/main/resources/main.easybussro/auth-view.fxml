@@ -10,7 +10,7 @@
 
 <AnchorPane prefHeight="572.0" prefWidth="388.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.easybussro.controllers.AuthController">
     <Label fx:id="welcomeText" />
-    <TextField fx:id="emailField" layoutX="85.0" layoutY="225.0" prefHeight="32.0" prefWidth="227.0" />
+    <TextField fx:id="usernameField" layoutX="85.0" layoutY="225.0" prefHeight="32.0" prefWidth="227.0" />
     <TextField fx:id="passwordField" layoutX="85.0" layoutY="286.0" prefHeight="32.0" prefWidth="227.0" AnchorPane.bottomAnchor="254.0" AnchorPane.leftAnchor="85.0" AnchorPane.rightAnchor="76.0" AnchorPane.topAnchor="286.0" />
     <Button layoutX="73.0" layoutY="481.0" onAction="#onRegister" prefHeight="32.0" prefWidth="236.0" text="Register" />
     <Button layoutX="73.0" layoutY="428.0" onAction="#onLogin" prefHeight="32.0" prefWidth="236.0" style="-fx-border-radius: 20%;" text="Login" />

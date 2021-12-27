@@ -2,6 +2,7 @@ package main.easybussro;
 import com.google.firebase.FirebaseApp;
 
 import com.google.firebase.FirebaseOptions;
+import com.google.firebase.auth.FirebaseAuth;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;

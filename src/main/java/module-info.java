@@ -12,8 +12,11 @@ module main.easybussro {
     requires firebase.admin;
     requires com.google.auth.oauth2;
     requires com.google.auth;
+    requires google.cloud.firestore;
+    requires google.cloud.core;
+    requires com.google.api.apicommon;
 
     opens main.easybussro.controllers to javafx.fxml;
-
+    exports main.easybussro.models to google.cloud.firestore;
     exports main.easybussro;
 }
