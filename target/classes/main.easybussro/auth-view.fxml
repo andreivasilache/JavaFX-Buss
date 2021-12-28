@@ -14,7 +14,14 @@
     <TextField fx:id="passwordField" layoutX="85.0" layoutY="286.0" prefHeight="32.0" prefWidth="227.0" AnchorPane.bottomAnchor="254.0" AnchorPane.leftAnchor="85.0" AnchorPane.rightAnchor="76.0" AnchorPane.topAnchor="286.0" />
     <Button layoutX="73.0" layoutY="481.0" onAction="#onRegister" prefHeight="32.0" prefWidth="236.0" text="Register" />
     <Button layoutX="73.0" layoutY="428.0" onAction="#onLogin" prefHeight="32.0" prefWidth="236.0" style="-fx-border-radius: 20%;" text="Login" />
-   <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="114.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
+
+    <Label layoutX="73.0" layoutY="368.0" textFill="#ff2f12" fx:id="errorLabel">
+        <font>
+            <Font name="Roboto Medium" size="12.0" />
+        </font>
+    </Label>
+
+    <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="114.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
       <image>
          <Image url="@logo.png" />
       </image>
@@ -29,9 +36,5 @@
          <Font name="Roboto Medium" size="12.0" />
       </font>
    </Label>
-   <Label layoutX="73.0" layoutY="368.0" text="Error" textFill="#ff2f12">
-      <font>
-         <Font name="Roboto Medium" size="12.0" />
-      </font>
-   </Label>
+
 </AnchorPane>
