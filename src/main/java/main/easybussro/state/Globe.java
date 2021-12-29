@@ -11,7 +11,6 @@ public class Globe {
     }
 
     public static Globe getGlobe() {
-
         if (globe == null)
             globe = new Globe();
 
