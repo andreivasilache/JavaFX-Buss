@@ -5,7 +5,6 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import main.easybussro.constants.MessageCodes;
 import main.easybussro.models.Route;
-import main.easybussro.models.Station;
 import main.easybussro.models.User;
 import main.easybussro.services.AuthService;
 import main.easybussro.services.RoutesService;
@@ -15,7 +14,7 @@ import main.easybussro.state.Globe;
 import main.easybussro.utils.SceneSwitcher;
 
 import java.io.IOException;
-import java.util.Vector;
+import java.util.List;
 import java.util.concurrent.ExecutionException;
 
 public class AuthController {
@@ -40,7 +39,7 @@ public class AuthController {
         MessageCodes response = authService.registerUser(newUser);
 
         if(response == MessageCodes.SUCCESS){
-            this.handleSuccessAuth(newUser);
+            this.handleSuccessAuth();
         }else if(response == MessageCodes.ALREADY_EXISTS){
             errorLabel.setText("User already exists");
         }else{
@@ -64,33 +63,41 @@ public class AuthController {
 //        stations.add(new Station("Constanta", "05:00", 10));
 //        Route route = new Route(stations);
 //
-//        RoutesService addrouter = new RoutesService();
-//        addrouter.addRoutes(route);
 
+        User newUser = new User(usernameField.getText(), passwordField.getText());
+        AuthService authService = new AuthService();
 
+        MessageCodes response = authService.loginUser(newUser);
 
-
-//        User newUser = new User(usernameField.getText(), passwordField.getText());
-//        AuthService authService = new AuthService();
-//
-//        MessageCodes response = authService.loginUser(newUser);
-//
-//        if(response == MessageCodes.SUCCESS){
-//           this.handleSuccessAuth(newUser);
-//        }else if(response == MessageCodes.NOT_FOUND){
-//            errorLabel.setText("User does not exists");
-//        }else if(response == MessageCodes.INVALID_PASSWORD){
-//            errorLabel.setText("Wrong password");
-//        }else{
-//            errorLabel.setText("Something went wrong");
-//        }
-//        System.out.println(state.getContext(ContextEnum.AUTHENTICATED_USER).getState("USERNAME"));
+        if(response == MessageCodes.SUCCESS){
+           this.handleSuccessAuth();
+        }else if(response == MessageCodes.NOT_FOUND){
+            errorLabel.setText("User does not exists");
+        }else if(response == MessageCodes.INVALID_PASSWORD){
+            errorLabel.setText("Wrong password");
+        }else{
+            errorLabel.setText("Something went wrong");
+        }
     }
 
-    private void handleSuccessAuth(User user) throws IOException {
-        Context authContext = new Context();
+    private void preloadUserMetadata(){
+        Context<String> authContext = new Context();
         authContext.putItem("USERNAME", usernameField.getText());
         state.putContext(ContextEnum.AUTHENTICATED_USER, authContext);
+    }
+
+    private void preloadAppBussRoutes() throws ExecutionException, InterruptedException {
+        RoutesService routesService = new RoutesService();
+        List<Route> routes = routesService.getAllRoutes();
+
+        Context<List<Route>> routesContext = new Context();
+        routesContext.putItem("BUSS-ROUTES", routes);
+        state.putContext(ContextEnum.AVAIlABLE_ROUTES, routesContext);
+    }
+
+    private void handleSuccessAuth() throws IOException, ExecutionException, InterruptedException {
+        preloadUserMetadata();
+        preloadAppBussRoutes();
 
         SceneSwitcher dashBoardScene = new SceneSwitcher(usernameField.getScene(), "/main.easybussro/dashBoard-view.fxml", new DashBoardController());
         dashBoardScene.loadScene();

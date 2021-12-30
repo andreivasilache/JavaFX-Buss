@@ -2,18 +2,18 @@ package main.easybussro.state;
 
 import java.util.HashMap;
 
-public class Context {
-    private HashMap<String, Object> states;
+public class Context<T> {
+    private HashMap<String, T> states;
 
     public Context() {
         states = new HashMap<>();
     }
 
-    public void putItem(String key, Object item) {
+    public void putItem(String key, T item) {
         states.put(key, item);
     }
-    public Object getState(String stateName) {
-        Object item = states.get(stateName);
+    public T getState(String stateName) {
+        T item = states.get(stateName);
         return item;
     }
 

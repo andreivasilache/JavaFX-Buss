@@ -1,11 +1,15 @@
 package main.easybussro.models;
 
+import java.util.List;
 import java.util.Vector;
 
 public class Route {
-    public Vector<Station> stations;
+    public List<Station> stations;
+    public String routeID;
 
-    public Route(Vector<Station> stations) {
-        this.stations = stations;
+    public Route() {}
+
+    public Route(List<Station> stations, String routeID) {
+        this.stations = stations; this.routeID = routeID;
     }
 }
