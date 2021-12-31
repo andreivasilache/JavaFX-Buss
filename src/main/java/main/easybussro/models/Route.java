@@ -1,7 +1,6 @@
 package main.easybussro.models;
 
 import java.util.List;
-import java.util.Vector;
 
 public class Route {
     public List<Station> stations;

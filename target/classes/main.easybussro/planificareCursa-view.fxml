@@ -37,8 +37,8 @@
          </font>
       </Label>
       <Button layoutX="16.0" layoutY="37.0" mnemonicParsing="false" text="&lt;" />
-      <Button layoutX="339.0" layoutY="153.0" mnemonicParsing="false" text="Go" />
-      <ListView layoutX="28.0" layoutY="227.0" prefHeight="230.0" prefWidth="350.0" />
+      <Button layoutX="339.0" layoutY="153.0" mnemonicParsing="false" text="Go" onAction="#onRouteSearch" />
+      <ListView layoutX="28.0" layoutY="227.0" prefHeight="230.0" prefWidth="350.0" fx:id="foundRoutesView" />
       <Label layoutX="27.0" layoutY="203.0" text="Rezultat cautare:">
          <font>
             <Font name="Roboto Medium" size="12.0" />

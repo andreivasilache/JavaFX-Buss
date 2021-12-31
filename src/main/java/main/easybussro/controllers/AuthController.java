@@ -21,8 +21,6 @@ public class AuthController {
     Globe state = Globe.getGlobe();
 
     @FXML
-    private Label welcomeText;
-    @FXML
     private TextField usernameField;
     @FXML
     private TextField passwordField;
