@@ -32,7 +32,7 @@ public class RoutesService {
         return toBeReturned;
     }
 
-    private static Station getStationFromHashMap(Map<String, Object> toBeParsed){
+    public static Station getStationFromHashMap(Map<String, Object> toBeParsed){
         String stationName = (String) toBeParsed.get("stationName");
         String arrivalTime = (String) toBeParsed.get("arrivalTime");
         int index = ((Long) toBeParsed.get("index")).intValue();

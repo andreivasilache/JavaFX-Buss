@@ -23,7 +23,6 @@ public class AuthService {
             Object res = this.getUser(userAuthData.username);
             if(res == MessageCodes.NOT_FOUND){
                 ApiFuture<WriteResult> future = db.collection(usersCollection).document(userAuthData.username).set(userAuthData);
-                System.out.println("Update time : " + future.get().getUpdateTime());
                 return MessageCodes.SUCCESS;
             }else if(res instanceof User){
                 return MessageCodes.ALREADY_EXISTS;

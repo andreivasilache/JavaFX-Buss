@@ -94,6 +94,7 @@ public class AuthController {
     private void preloadUserMetadata(){
         Context<String> authContext = new Context();
         authContext.putItem("USERNAME", usernameField.getText());
+        System.out.println(usernameField.getText());
         state.putContext(ContextEnum.AUTHENTICATED_USER, authContext);
     }
 

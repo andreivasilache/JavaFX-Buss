@@ -10,11 +10,10 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="572.0" prefWidth="388.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="572.0" prefWidth="596.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label fx:id="welcomeText" />
-      <Button layoutX="28.0" layoutY="516.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="350.0" text="Achizitionare cursa" onAction="#onBuyTrip" />
-      <ImageView fitHeight="65.0" fitWidth="79.0" layoutX="157.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+      <Button layoutX="22.0" layoutY="516.0" mnemonicParsing="false" onAction="#onBuyTrip" prefHeight="25.0" prefWidth="553.0" text="Achizitionare cursa" />
+      <ImageView fitHeight="65.0" fitWidth="79.0" layoutX="261.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@logo.png" />
          </image>
@@ -24,21 +23,21 @@
             <Font name="Roboto Medium" size="20.0" />
          </font>
       </Label>
-      <ChoiceBox fx:id="fromDropdown" layoutX="65.0" layoutY="153.0" prefHeight="25.0" prefWidth="124.0" />
+      <ChoiceBox fx:id="fromDropdown" layoutX="65.0" layoutY="153.0" prefHeight="25.0" prefWidth="215.0" />
       <Label layoutX="26.0" layoutY="158.0" text="De la:">
          <font>
             <Font name="Roboto Medium" size="12.0" />
          </font>
       </Label>
-      <ChoiceBox fx:id="toDropdown" layoutX="246.0" layoutY="153.0" prefHeight="25.0" prefWidth="124.0" />
-      <Label layoutX="196.0" layoutY="158.0" text="Pana la:">
+      <ChoiceBox fx:id="toDropdown" layoutX="359.0" layoutY="153.0" prefHeight="25.0" prefWidth="215.0" />
+      <Label layoutX="306.0" layoutY="158.0" text="Pana la:">
          <font>
             <Font name="Roboto Medium" size="12.0" />
          </font>
       </Label>
-      <Button layoutX="16.0" layoutY="37.0" mnemonicParsing="false" text="&lt;" />
-      <Button layoutX="246.0" layoutY="195.0" mnemonicParsing="false" onAction="#onRouteSearch" prefHeight="25.0" prefWidth="124.0" text="Cauta cursa" />
-      <ListView fx:id="foundRoutesView" layoutX="21.0" layoutY="268.0" prefHeight="227.0" prefWidth="350.0" />
+      <Button layoutX="16.0" layoutY="37.0" mnemonicParsing="false" onAction="#onBack" text="&lt;" />
+      <Button layoutX="483.0" layoutY="195.0" mnemonicParsing="false" onAction="#onRouteSearch" prefHeight="25.0" prefWidth="91.0" text="Cauta cursa" />
+      <ListView fx:id="foundRoutesView" layoutX="21.0" layoutY="268.0" prefHeight="227.0" prefWidth="553.0" />
       <Label layoutX="20.0" layoutY="240.0" text="Rezultat cautare:">
          <font>
             <Font name="Roboto Medium" size="12.0" />
@@ -49,6 +48,6 @@
             <Font name="Roboto Medium" size="12.0" />
          </font>
       </Label>
-      <DatePicker fx:id="datePicker" layoutX="65.0" layoutY="195.0" prefHeight="25.0" prefWidth="124.0"  />
+      <DatePicker fx:id="datePicker" layoutX="65.0" layoutY="195.0" prefHeight="25.0" prefWidth="215.0" />
    </children>
 </AnchorPane>

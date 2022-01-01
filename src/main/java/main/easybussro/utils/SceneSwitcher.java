@@ -20,10 +20,19 @@ public class SceneSwitcher {
         this.controllerInstance = controllerInstance;
     }
 
+    public SceneSwitcher(
+            Scene elementParentWindow, String FXMLResourcePath
+    ) {
+        this.elementParentWindow = elementParentWindow;
+        this.FXMLResourcePath = FXMLResourcePath;
+    }
+
     public void loadScene() throws IOException {
         Stage elementParentWindowScene = (Stage) elementParentWindow.getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(this.FXMLResourcePath));
-        fxmlLoader.setController(this.controllerInstance);
+        if(this.controllerInstance != null){
+            fxmlLoader.setController(this.controllerInstance);
+        }
         Scene scene = new Scene(fxmlLoader.load(), Sizes.APP_WIDTH, Sizes.APP_HEIGHT);
         elementParentWindowScene.setScene(scene);
     }

@@ -8,29 +8,29 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="572.0" prefWidth="388.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.easybussro.controllers.AuthController">
-    <TextField fx:id="usernameField" layoutX="85.0" layoutY="225.0" prefHeight="32.0" prefWidth="227.0" />
-    <TextField fx:id="passwordField" layoutX="85.0" layoutY="286.0" prefHeight="32.0" prefWidth="227.0" AnchorPane.bottomAnchor="254.0" AnchorPane.leftAnchor="85.0" AnchorPane.rightAnchor="76.0" AnchorPane.topAnchor="286.0" />
-    <Button layoutX="73.0" layoutY="481.0" onAction="#onRegister" prefHeight="32.0" prefWidth="236.0" text="Register" />
-    <Button layoutX="73.0" layoutY="428.0" onAction="#onLogin" prefHeight="32.0" prefWidth="236.0" style="-fx-border-radius: 20%;" text="Login" />
+<AnchorPane prefHeight="572.0" prefWidth="596.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.easybussro.controllers.AuthController">
+    <TextField fx:id="usernameField" layoutX="90.0" layoutY="310.0" prefHeight="32.0" prefWidth="451.0" />
+    <TextField fx:id="passwordField" layoutX="90.0" layoutY="371.0" prefHeight="32.0" prefWidth="451.0" AnchorPane.bottomAnchor="169.0" AnchorPane.leftAnchor="90.0" AnchorPane.rightAnchor="55.0" AnchorPane.topAnchor="371.0" />
+    <Button layoutX="346.0" layoutY="468.0" onAction="#onRegister" prefHeight="32.0" prefWidth="195.0" text="Register" />
+    <Button layoutX="90.0" layoutY="468.0" onAction="#onLogin" prefHeight="32.0" prefWidth="195.0" style="-fx-border-radius: 20%;" text="Login" />
 
-    <Label layoutX="73.0" layoutY="368.0" textFill="#ff2f12" fx:id="errorLabel">
+    <Label fx:id="errorLabel" layoutX="78.0" layoutY="453.0" textFill="#ff2f12">
         <font>
             <Font name="Roboto Medium" size="12.0" />
         </font>
     </Label>
 
-    <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="114.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
+    <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="214.0" layoutY="85.0" pickOnBounds="true" preserveRatio="true">
       <image>
          <Image url="@logo.png" />
       </image>
    </ImageView>
-   <Label layoutX="47.0" layoutY="233.0" text="Email">
+   <Label layoutX="28.0" layoutY="319.0" text="Username">
       <font>
          <Font name="Roboto Medium" size="12.0" />
       </font>
    </Label>
-   <Label layoutX="23.0" layoutY="295.0" text="Password">
+   <Label layoutX="28.0" layoutY="380.0" text="Password">
       <font>
          <Font name="Roboto Medium" size="12.0" />
       </font>

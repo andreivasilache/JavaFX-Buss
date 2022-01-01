@@ -8,14 +8,13 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="572.0" prefWidth="388.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
-           <Label fx:id="welcomeText" />
-   <Button layoutX="35.0" layoutY="511.0" mnemonicParsing="false" prefHeight="25.0"  onAction="#planificareCursa" prefWidth="336.0" text="Planificare cursa " />
-   <Button layoutX="308.0" layoutY="17.0" mnemonicParsing="false" text="Logout" />
-   <Button layoutX="35.0" layoutY="475.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="336.0" text="Istoric curse" />
-   <Button layoutX="35.0" layoutY="437.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="336.0" text="Orar curse" />
-   <ListView layoutX="35.0" layoutY="167.0" prefHeight="242.0" prefWidth="336.0" />
-   <Label layoutX="35.0" layoutY="140.0" text="Curse achizitionate:">
+<AnchorPane prefHeight="572.0" prefWidth="596.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+   <Button layoutX="35.0" layoutY="511.0" mnemonicParsing="false" onAction="#onTripPlan" prefHeight="25.0" prefWidth="531.0" text="Planificare cursa " />
+   <Button layoutX="512.0" layoutY="37.0" mnemonicParsing="false" onAction="#onLogout" text="Logout" />
+   <Button layoutX="35.0" layoutY="475.0" mnemonicParsing="false" onAction="#goToTripsHistory" prefHeight="25.0" prefWidth="531.0" text="Istoric curse" />
+   <Button layoutX="35.0" layoutY="437.0" mnemonicParsing="false" onAction="#goToAllRoutes" prefHeight="25.0" prefWidth="531.0" text="Orar curse" />
+   <ListView fx:id="foundRoutesView" layoutX="35.0" layoutY="167.0" prefHeight="242.0" prefWidth="531.0" style="-fx-fixed-cell-size: 36;" />
+   <Label layoutX="35.0" layoutY="140.0" text="Curse viitoare:">
       <font>
          <Font name="Roboto Medium" size="12.0" />
       </font>
