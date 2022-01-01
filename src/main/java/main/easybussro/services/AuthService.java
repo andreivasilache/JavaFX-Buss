@@ -36,6 +36,7 @@ public class AuthService {
     }
 
     public MessageCodes loginUser(User userAuthData) throws ExecutionException, InterruptedException {
+
         try{
             Object res = this.getUser(userAuthData.username);
             if(res == MessageCodes.NOT_FOUND){

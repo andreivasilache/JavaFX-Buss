@@ -5,8 +5,10 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import main.easybussro.constants.MessageCodes;
 import main.easybussro.models.Route;
+import main.easybussro.models.RouteDistance;
 import main.easybussro.models.User;
 import main.easybussro.services.AuthService;
+import main.easybussro.services.RouteDistancesService;
 import main.easybussro.services.RoutesService;
 import main.easybussro.state.Context;
 import main.easybussro.state.ContextEnum;
@@ -14,6 +16,7 @@ import main.easybussro.state.Globe;
 import main.easybussro.utils.SceneSwitcher;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 
@@ -78,6 +81,16 @@ public class AuthController {
         }
     }
 
+    private void preloadRouteDistances() throws ExecutionException, InterruptedException {
+        RouteDistancesService routeDistancesService = new RouteDistancesService();
+
+        HashMap<String, RouteDistance> foundDistances = routeDistancesService.getAllDistances();
+
+        Context< HashMap<String, RouteDistance>> authContext = new Context();
+        authContext.putItem("DISTANCES", foundDistances);
+        state.putContext(ContextEnum.ROUTE_DISTANCES, authContext);
+    }
+
     private void preloadUserMetadata(){
         Context<String> authContext = new Context();
         authContext.putItem("USERNAME", usernameField.getText());
@@ -96,6 +109,7 @@ public class AuthController {
     private void handleSuccessAuth() throws IOException, ExecutionException, InterruptedException {
         preloadUserMetadata();
         preloadAppBussRoutes();
+        preloadRouteDistances();
 
         SceneSwitcher dashBoardScene = new SceneSwitcher(usernameField.getScene(), "/main.easybussro/dashBoard-view.fxml", new DashBoardController());
         dashBoardScene.loadScene();
